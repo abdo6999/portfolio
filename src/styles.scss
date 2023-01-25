@@ -1,1 +1,96 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
+[data-theme='dark'] {
+  --main-bg-color: linear-gradient(to bottom left,rgba(17,16,16,0.678),rgba(12,10,22,0.863)),url('./assets/home-bg.64500e6f.jpg');
+  --bg-color: rgba(255, 255, 255, 0.25);
+  --font-color: rgba(255, 255, 255, 0.9);
+  --paragraph-color: rgba(255, 255, 255,0.4);
+}
+[data-theme='light'] {
+  --main-bg-color: linear-gradient(307deg,transparent,transparent 57%,#fff 0,#f8f8f8),linear-gradient(180deg,#fff 0%,#f8f8f8);
+  --bg-color:rgba(0, 0, 0, 0.65);
+  --font-color: rgba(0, 0, 0,0.9);
+  --paragraph-color: rgba(0, 0, 0,0.7);
+}
+:root {
+  --fs-xl:5rem;
+  --fs-600:2rem;
+  --fs-500:1.25rem;
+  --fs-400:1rem;
+  --fs-300:0.75rem;
+}
+@media (min-width: 768px) {
+  :root {
+    --fs-xl:6rem;
+    --fs-600:2.5rem;
+    --fs-500:1.5rem;
+    --fs-400:1.25rem;
+    --fs-300:1rem;
+  }
+}
+
+html { 
+  font-family: sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin:0;
+}
+*:focus-visible {
+  outline: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+body , html {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: var(--main-bg-color);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: var(--font-color);
+}
+html { 
+  font-family: sans-serif;
+}
+
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 97px;
+}
+/* Extra  small */
+@media (min-width: 576px){
+  .container {
+      max-width: 540px;
+  }
+}
+/* small */
+@media (min-width: 768px) {
+  .container {
+      max-width: 750px;
+  }
+}
+/* medium */
+@media (min-width: 992px) {
+  .container {
+      max-width: 970px;
+  }
+}
+
+/* large */
+@media (min-width: 1200px) {
+  .container {
+      max-width: 1170px;
+  }
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

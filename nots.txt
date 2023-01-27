@@ -1,6 +1,6 @@
 portofolio
 componatn to do 
-1. home (name and title - info - cv)
+1. home (name and title - info - cv) ---make it auto---
 2. portofolio (use github api to incloud my work auto)
 3. contanct me 
 rouls

@@ -1,9 +1,13 @@
 .app-wrapper {
-  display:  flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
-
+.overlayout {
+  background-color: var(--bg-layout-home); 
+  z-index: 99;
+}
 .content-section {
   width: 100%;
   height: 100%;
@@ -12,8 +16,8 @@
   position: fixed;
   bottom: 0;
   width: fit-content;
+  z-index: 999;
 }
 ::ng-deep router-outlet + * {
   height: 100%;
-} 
-
+}

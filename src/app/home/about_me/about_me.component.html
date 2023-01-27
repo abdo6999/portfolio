@@ -1,0 +1,10 @@
+<section class = 'about'>
+  <div class="contant">
+    <div class="header">
+      <h1>About Me</h1>
+    </div>
+    <div class="info">
+      <app-card *ngFor="let x of contant" [front]="x['front']" [back]="x['back']" ></app-card>
+    </div>
+  </div>
+</section>

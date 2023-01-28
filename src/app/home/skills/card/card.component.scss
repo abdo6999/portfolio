@@ -36,6 +36,15 @@
       color: var(--font-color);
       font-size: 100px;
     }
+    ::ng-deep { 
+      svg {
+        * {
+          fill: var(--font-color);
+        }
+      }
+    }
+
+
     img {
       display: block;
       

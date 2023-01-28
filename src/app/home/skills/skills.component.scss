@@ -1,0 +1,17 @@
+.skills {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  padding: 10px;
+}
+.contant {
+  width: 100%;
+  height: 100%;
+}
+
+.skills-cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}

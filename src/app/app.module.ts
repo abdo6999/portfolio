@@ -8,11 +8,13 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactComponent } from './contact/contact.component';
-import { AboutComponent } from './home/summary/summary.component';
-import { SkillsComponent } from './home/about_me/about_me.component';
+import { summaryComponent } from './home/summary/summary.component';
+import { about_meComponent } from './home/about_me/about_me.component';
+import { CardAboutComponent } from './home/about_me/card/card.component';
+import { SkillsComponent } from './home/skills/skills.component';
+import { CardSkillsComponent } from './home/skills/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CardComponent } from './home/about_me/card/card.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,11 @@ import { CardComponent } from './home/about_me/card/card.component';
     HomeComponent,
     PortfolioComponent,
     ContactComponent,
-    AboutComponent,
+    summaryComponent,
+    about_meComponent,
     SkillsComponent,
-    CardComponent,
+    CardAboutComponent,
+    CardSkillsComponent,
   ],
   imports: [
     RouterModule,

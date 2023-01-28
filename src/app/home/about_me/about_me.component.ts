@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './about_me.component.html',
   styleUrls: ['./about_me.component.scss']
 })
-export class SkillsComponent {
+export class about_meComponent {
   contant = [
     {front:'age',back:'21'},
     {front:'Email',back:'abdelrahman.mahmoud.elsaeed@gmail.com'},

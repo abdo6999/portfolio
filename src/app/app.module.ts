@@ -15,6 +15,7 @@ import { SkillsComponent } from './home/skills/skills.component';
 import { CardSkillsComponent } from './home/skills/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProjectCardComponent } from './portfolio/project-card/project-card.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SkillsComponent,
     CardAboutComponent,
     CardSkillsComponent,
+    ProjectCardComponent,
   ],
   imports: [
     RouterModule,

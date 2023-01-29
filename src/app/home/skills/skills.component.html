@@ -4,16 +4,18 @@
       <h1>Skills</h1>
     </div>
     <div class="skills-cards">
-      <app-card-skills
-        *ngFor="let x of contantFa"
-        [front]="x['front']"
-        [back]="x['back']"
-      ></app-card-skills>
-      <app-card-skills
-        *ngFor="let x of contantsvg"
-        [svg]="x['svg']"
-        [back]="x['back']"
-      ></app-card-skills>
+      <ng-container *ngFor="let x of contant">
+        <app-card-skills
+          *ngIf="x.front !== undefined"
+          [front]="x['front']"
+          [back]="x['back']"
+        ></app-card-skills>
+        <app-card-skills
+        *ngIf="x.svg !== undefined"
+          [svg]="x['svg']"
+          [back]="x['back']"
+        ></app-card-skills>
+      </ng-container>
     </div>
   </div>
 </section>

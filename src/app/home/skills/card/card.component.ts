@@ -1,6 +1,6 @@
-import { Component, ElementRef, Input, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, AfterViewInit,ChangeDetectorRef } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { DomSanitizer, SafeHtml, SafeResourceUrl, SafeUrl } from "@angular/platform-browser";
+import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-card-skills',
@@ -12,10 +12,11 @@ export class CardSkillsComponent implements AfterViewInit {
   @Input() svg!: string;
   @Input() back!: string;
   @ViewChild('font') public font!: ElementRef;
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(private sanitizer: DomSanitizer,private cdref: ChangeDetectorRef) {}
   svgData!:SafeHtml ;
   ngAfterViewInit(): void {
-    this.svgData = this.sanitizer.bypassSecurityTrustHtml(this.svg);;
+    this.svgData = this.sanitizer.bypassSecurityTrustHtml(this.svg);
+    this.cdref.detectChanges();
   }
 
   

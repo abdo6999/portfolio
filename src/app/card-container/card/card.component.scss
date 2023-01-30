@@ -31,12 +31,17 @@
     backface-visibility: hidden;
   }
   .front {
-    fa-icon {
-      transition: all 0.4s;
-      color: var(--font-color);
-      font-size: 100px;
-    }
     ::ng-deep { 
+      h3 {
+        transition: all 0.4s;
+        color: var(--font-color);
+        font-size: var(--fs-600);
+      }
+      i {
+        transition: all 0.4s;
+        color: var(--font-color);
+        font-size: var(--fs-xl);
+      }
       svg {
         * {
           fill: var(--font-color);

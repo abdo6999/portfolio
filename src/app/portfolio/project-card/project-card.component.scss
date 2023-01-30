@@ -83,11 +83,14 @@
 }
 .material-card.mc-active h2 {
   top: 0;
-  padding: 10px 16px 10px 90px;
+  span {
+    margin: auto auto;
+    width: fit-content;
+  }
 }
 .material-card.mc-active p {
   font-size: var(--fs-400);
-  color: var(--font-color);
+  color: black;
 }
 .material-card.mc-active h2:before {
   top: 0;
@@ -172,15 +175,14 @@
 }
 .material-card .mc-footer a {
   display: block;
-  float: left;
   position: relative;
   width: 52px;
   height: 52px;
-  margin-left: 5px;
+  margin-left: 10px;
   margin-bottom: 15px;
   font-size: 28px;
   color: #fff;
-  line-height: 52px;
+  line-height: 42px;
   text-decoration: none;
   top: 200px;
 }
@@ -236,17 +238,10 @@
 .material-card .img-container .img-responsive {
   display: block;
   max-width: 100%;
-  height: auto;
+  height: 100%;
 }
 .material-card.mc-active .img-container {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  left: 0;
-  top: 12px;
-  width: 60px;
-  height: 60px;
-  z-index: 20;
+  display: none;
 }
 .material-card.mc-active .mc-content {
   padding-top: 5.6em;
@@ -275,13 +270,14 @@
 }
 .material-card.mc-active .mc-footer {
   overflow: visible;
+  display: flex;
   position: absolute;
   top: calc(100% - 16px);
   left: 16px;
   right: 0;
   height: 82px;
   padding-top: 15px;
-  padding-left: 25px;
+  padding-left: 15px;
 }
 .material-card.mc-active .mc-footer a {
   top: 0;
@@ -328,6 +324,7 @@
 }
 .material-card.Purple .mc-footer a {
   background-color: #4A148C;
+  cursor: pointer;
 }
 .material-card.Purple.mc-active .mc-content {
   background-color: #F3E5F5;

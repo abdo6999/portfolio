@@ -1,16 +1,17 @@
-.about {
+.card-contaier {
   width: 100%;
   height: fit-content;
   position: relative;
   display: flex;
   padding: 10px;
+  margin-bottom: 200px;
 }
 .contant {
   width: 100%;
   height: 100%;
 }
 
-.info {
+.cards {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

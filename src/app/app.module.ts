@@ -9,13 +9,11 @@ import { HomeComponent } from './home/home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactComponent } from './contact/contact.component';
 import { summaryComponent } from './home/summary/summary.component';
-import { about_meComponent } from './home/about_me/about_me.component';
-import { CardAboutComponent } from './home/about_me/card/card.component';
-import { SkillsComponent } from './home/skills/skills.component';
-import { CardSkillsComponent } from './home/skills/card/card.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectCardComponent } from './portfolio/project-card/project-card.component';
+import { CardContainerComponent } from './card-container/card-container.component';
+import { CardComponent } from './card-container/card/card.component';
 
 @NgModule({
   declarations: [
@@ -25,18 +23,15 @@ import { ProjectCardComponent } from './portfolio/project-card/project-card.comp
     PortfolioComponent,
     ContactComponent,
     summaryComponent,
-    about_meComponent,
-    SkillsComponent,
-    CardAboutComponent,
-    CardSkillsComponent,
     ProjectCardComponent,
+    CardContainerComponent,
+    CardComponent,
   ],
   imports: [
     RouterModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

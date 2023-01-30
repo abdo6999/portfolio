@@ -1,32 +1,20 @@
 <div class="card">
     <article class="material-card Purple" #card>
         <h2>
-            <span>Clint Eastwood</span>
-            <strong >
-                <fa-icon  [icon]="faStar" ></fa-icon>
-                Million Dollar Baby
-            </strong>
+            <span>{{title}}</span>
         </h2>
         <div class="mc-content">
             <div class="img-container">
-                <img class="img-responsive" src="https://material-cards.s3-eu-west-1.amazonaws.com/thumb-clint-eastwood.jpg">
+                <img class="img-responsive" [src]= img>
             </div>
             <div class="mc-description">
-                <p>He rose to international fame with his role as the Man with No Name in Sergio Leone's Dollars trilogy of spaghetti Westerns during the 1960s ...</p>
+                <p>{{description}}</p>
             </div>
         </div>
         <a class="mc-btn-action" #icon (click)="Anim()">
-
-          <fa-icon [icon]="faBars"></fa-icon>
+            <i class="fa fa-bars"></i>
         </a>
-        <div class="mc-footer">
-            <h4>
-                Social
-            </h4>
-            <a class="fa fa-fw fa-facebook"></a>
-            <a class="fa fa-fw fa-twitter"></a>
-            <a class="fa fa-fw fa-linkedin"></a>
-            <a class="fa fa-fw fa-google-plus"></a>
+        <div class="mc-footer" [innerHTML] = "Links">
         </div>
     </article>
 </div>

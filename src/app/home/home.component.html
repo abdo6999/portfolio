@@ -1,5 +1,6 @@
 <div class="container home">
     <app-summary></app-summary>
-    <app-about_me id="about_me"></app-about_me>
-    <app-skills id="skills"></app-skills>
+    <app-card-container [content]="contant_about_me" [header]="'About Me'" id="about_me"></app-card-container>
+    <app-card-container [content]="contantSkills" [header]="'Skills'" id="about_me"></app-card-container>
+    <!-- <app-skills id="skills"></app-skills>  -->
 </div>

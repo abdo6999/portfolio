@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Material+Icons');
 @import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/v4-shims.scss";
+
+
 [data-theme='dark'] {
   --main-bg-color: linear-gradient(to bottom left,rgba(17,16,16,0.678),rgba(12,10,22,0.863)),url('./assets/home-bg.64500e6f.jpg');
   --bg-color: rgba(255, 255, 255, 0.25);
@@ -123,3 +130,24 @@ body {
   }
 }
 
+.icon-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 6px 12px;
+  background-color: var(--icon-color);
+  font-size: var(--fs-600);
+  color: rgba(white,0.7);
+  opacity: 0.9;
+  transition: all  0.1S;
+  &:hover{
+    color: rgba(white,0.9);
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  cursor: pointer;
+  p {
+    margin: 0 0 5px 0 ;
+  }
+}

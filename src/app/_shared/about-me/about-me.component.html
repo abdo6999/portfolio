@@ -1,0 +1,27 @@
+
+<section class="about-contaier">
+  <div class="header">
+    <h1>About Me</h1>
+  </div>
+  <div class="contant">
+    <div class="image-container">
+      <div class="shadow">
+        <img class="frame" src="./assets/frame.png" alt="frame" />
+      </div>
+    </div> 
+    <div class="cards">
+    <ng-container *ngFor="let k of keys;let i = index">
+          <div class="card-container">
+            <div class="card">
+              <div class="front" >
+                <h3 >{{k}}</h3>
+              </div>
+              <div class="back">
+                <span >{{ values[i] }}</span>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+  </div>
+</section>

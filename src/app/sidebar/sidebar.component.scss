@@ -1,0 +1,66 @@
+.top,.bottom {
+  position: fixed;
+  width: var(--side-width);
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+}
+.top { 
+  top: 15px;
+  z-index: 15;
+}
+.bottom {
+  bottom: 15px;
+}
+.tabs {
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #2f2f2f;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.tabs.selected {
+  background: var(--active-color);
+}
+.tab-title {
+  i {
+    font-size: var(--icon-size);
+    color: var(--icon-color);
+  }
+}
+::ng-deep{
+
+  app-svg-icon:not([ng-reflect-name="PostgreSQL"]):not([ng-reflect-name="Jasmine"]) span svg {
+    width: 35px;
+    display: block;
+    height: fit-content;
+    * {
+      fill: var(--icon-color);
+    }
+  }
+}
+
+@media (max-width: 768px) { 
+  .top {
+    top: auto;
+    bottom: 15px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .tabs {
+    margin: 0;
+    margin: 0 10px;
+  } 
+  .bottom {
+    display: none;
+  }
+}

@@ -1,39 +1,37 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
-
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
-import { HomeComponent } from './home/home.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { ContactComponent } from './contact/contact.component';
-import { summaryComponent } from './home/summary/summary.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProjectCardComponent } from './portfolio/project-card/project-card.component';
-import { CardContainerComponent } from './card-container/card-container.component';
-import { CardComponent } from './card-container/card/card.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MeComponent } from './pages/me/me.component';
+import { ContactMeComponent } from './pages/contact-me/contact-me.component';
+import { ProjectComponent } from './pages/project/project.component';
+import { SvgIconComponent } from './_shared/svg-icon/svg-icon.component';
+import { SkillsComponent } from './_shared/skills/skills.component';
+import { AboutMeComponent } from './_shared/about-me/about-me.component';
+import { SummaryComponent } from './_shared/summary/summary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
-    HomeComponent,
-    PortfolioComponent,
-    ContactComponent,
-    summaryComponent,
-    ProjectCardComponent,
-    CardContainerComponent,
-    CardComponent,
+    SidebarComponent,
+    MeComponent,
+    ContactMeComponent,
+    ProjectComponent,
+    SvgIconComponent,
+    SkillsComponent,
+    AboutMeComponent,
+    SummaryComponent
   ],
   imports: [
-    RouterModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    HttpClientModule,
+    
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

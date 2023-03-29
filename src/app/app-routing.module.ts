@@ -1,14 +1,13 @@
-import { ContactComponent } from './contact/contact.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { HomeComponent } from './home/home.component';
+import { ContactMeComponent } from './pages/contact-me/contact-me.component';
+import { ProjectComponent } from './pages/project/project.component';
+import { MeComponent } from './pages/me/me.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
-  {path:'home',component:HomeComponent},
-  {path:'portfolio',component:PortfolioComponent},
-  {path:'contact',component:ContactComponent}
+  {path:'',component:MeComponent,pathMatch : 'full'},
+  {path:'portfolio',component:ProjectComponent},
+  {path:'contact-me',component:ContactMeComponent}
 ];
 
 @NgModule({

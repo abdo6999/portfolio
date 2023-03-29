@@ -1,37 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Material+Icons');
 @import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
-@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
-@import "../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
-@import "../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
-@import "../node_modules/@fortawesome/fontawesome-free/scss/v4-shims.scss";
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Sharp');
 
-
-[data-theme='dark'] {
-  --main-bg-color: linear-gradient(to bottom left,rgba(17,16,16,0.678),rgba(12,10,22,0.863)),url('./assets/home-bg.64500e6f.jpg');
-  --bg-color: rgba(255, 255, 255, 0.25);
-  --bg: #623686;
-  --font-color: rgba(255, 255, 255, 0.9);
-  --paragraph-color: rgba(255, 255, 255,0.4);
-  --bg-layout-home:linear-gradient(270deg,#1b1429,#140f23);
-  --icon-color:#623686;
-}
-[data-theme='light'] {
-  --main-bg-color: linear-gradient(307deg,transparent,transparent 57%,#fff 0,#f8f8f8),linear-gradient(180deg,#fff 0%,#f8f8f8);
-  --bg-color:rgba(0, 0, 0, 0.65);
-  --bg: #623686;
-  --font-color: rgba(0, 0, 0,0.9);
-  --paragraph-color: rgba(0, 0, 0,0.7);
-  --bg-layout-home: linear-gradient(307deg,transparent,transparent 57%,#fff 0,#f8f8f8),linear-gradient(180deg,#fff 0%,#f8f8f8);
-  --icon-color:#623686;
-}
 :root {
   --fs-xl:5rem;
   --fs-600:2rem;
   --fs-500:1.25rem;
   --fs-400:1rem;
   --fs-300:0.75rem;
+  --side-width:4.5rem;
+  --icon-size:35px;
+  --main-bg-color: linear-gradient(to bottom left,rgba(17,16,16,0.678),rgba(12,10,22,0.863)),url('./assets/home-bg.64500e6f.jpg');
+  --bg-color: #2f2f2f;
+  --bg: #623686;
+  --heder-font-color:rgba(255, 255, 255, 0.8);
+  --font-color: rgba(255, 255, 255, 0.7);
+  --paragraph-color: rgba(255, 255, 255,0.4);
+  --bg-layout-home:linear-gradient(270deg,#1b1429,#140f23);
+  --icon-color:rgba(255, 255, 255, 0.7);
+  --active-color:#3a9fe7;
 }
 @media (min-width: 768px) {
   :root {
@@ -47,18 +35,19 @@ html {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   scroll-behavior:smooth !important;
   -webkit-scroll-behavior:smooth !important;
+  height:100%
 }
 * {
   box-sizing: border-box;
 }
-*:focus-visible {
-  outline: none;
-}
-::-webkit-scrollbar {
-  display: none;
-}
+// *:focus-visible {
+//   outline: none;
+// }
+// ::-webkit-scrollbar {
+//   display: none;
+// }
+
 body {
-  height: 100%;
   margin: 0; 
   overflow-y: scroll;
   overflow-x: hidden;
@@ -68,9 +57,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   color: var(--font-color);
-
 }
-
 
 .container {
   padding-left: 10px;
@@ -78,6 +65,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   min-height: 97px;
+  height: 100%;
 }
 /* Extra  small */
 @media (min-width: 576px){
@@ -104,15 +92,18 @@ body {
       max-width: 1170px;
   }
 }
-.overlayout {
-  position: absolute;
-  width: 200%;
-  height: 100%;
-  top: 0;
-  left: -50%;
-  right: 0;
-  bottom: 0;
+.icon:hover {
+  * {
+    color: #fff;
+  }
+  i,app-svg-icon {
+    --icon-color:#fff;
+  }
+  transform: scale(1.1);
 }
+
+
+
 .header {
   display: flex; 
   width: 100%;
@@ -120,34 +111,17 @@ body {
   justify-content: center;
   align-items: center;
   margin: 100px 0;
+  cursor:default;
+  h1.active {
+    background-color: var(--active-color);
+  }
   h1 {
     padding: 10px;
     margin: 20px;
     color: var(--font-color);
     border-radius: 10px;
     font-size: var(--fs-600);
-    background-color: var(--icon-color);
+    background-color: var(--bg-color);
   }
 }
 
-.icon-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  padding: 6px 12px;
-  background-color: var(--icon-color);
-  font-size: var(--fs-600);
-  color: rgba(white,0.7);
-  opacity: 0.9;
-  transition: all  0.1S;
-  &:hover{
-    color: rgba(white,0.9);
-    opacity: 1;
-    transform: scale(1.15);
-  }
-  cursor: pointer;
-  p {
-    margin: 0 0 5px 0 ;
-  }
-}

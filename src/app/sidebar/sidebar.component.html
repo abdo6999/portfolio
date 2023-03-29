@@ -1,0 +1,57 @@
+<nav class="nav-tabs">
+  <div class="top">
+    <a
+      title="home"
+      routerLink=""
+      routerLinkActive="selected"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="tabs icon home-tab"
+    >
+      <div class="tab-title">
+        <i class="material-icons-sharp">home</i>
+      </div>
+    </a>
+    <a
+      title="portfolio"
+      routerLink="portfolio"
+      routerLinkActive="selected"
+      class="tabs icon portfolio-tab"
+    >
+      <div class="tab-title">
+        <i class="material-icons-sharp">person</i>
+      </div>
+    </a>
+    <a
+      title="contact-me "
+      routerLink="contact-me"
+      routerLinkActive="selected"
+      class="tabs icon contact-tab"
+    >
+      <div class="tab-title">
+        <i class="material-icons-sharp">mail</i>
+      </div>
+    </a>
+  </div>
+  <div class="bottom">
+    <a href="" title="linkedin" class="tabs icon contact-tab">
+      <div class="tab-title">
+        <app-svg-icon name="linkedin"></app-svg-icon>
+      </div>
+    </a>
+    <a href="" title="github" class="tabs icon contact-tab">
+      <div class="tab-title">
+        <app-svg-icon name="github"></app-svg-icon>
+      </div>
+    </a>
+    <a href="" title="gmail" class="tabs icon contact-tab">
+      <div class="tab-title">
+        <i class="material-icons-sharp">alternate_email</i>
+      </div>
+    </a>
+    <a href="" title="cv" class="tabs icon contact-tab">
+      <div class="tab-title">
+        <i class="material-icons-sharp">file_open </i>
+      </div>
+    </a>
+  </div>
+</nav>

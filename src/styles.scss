@@ -13,21 +13,21 @@
   --icon-size:35px;
   --main-bg-color: linear-gradient(to bottom left,rgba(17,16,16,0.678),rgba(12,10,22,0.863)),url('./assets/home-bg.64500e6f.jpg');
   --bg-color: #2f2f2f;
-  --bg: #623686;
+  --border-color: #623686;
   --heder-font-color:rgba(255, 255, 255, 0.8);
   --font-color: rgba(255, 255, 255, 0.7);
   --paragraph-color: rgba(255, 255, 255,0.4);
-  --bg-layout-home:linear-gradient(270deg,#1b1429,#140f23);
+  // --bg-layout-home:linear-gradient(270deg,#1b1429,#140f23);
   --icon-color:rgba(255, 255, 255, 0.7);
   --active-color:#3a9fe7;
 }
-@media (min-width: 768px) {
+
+@media (max-width: 768px) {
   :root {
-    --fs-xl:6rem;
-    --fs-600:2.5rem;
-    --fs-500:1.5rem;
-    --fs-400:1.25rem;
-    --fs-300:1rem;
+    --fs-600:1.75rem;
+    --fs-500: 1.1rem;
+    --fs-400:0.75rem;
+    --fs-300:0.5rem;
   }
 }
 
@@ -40,12 +40,6 @@ html {
 * {
   box-sizing: border-box;
 }
-// *:focus-visible {
-//   outline: none;
-// }
-// ::-webkit-scrollbar {
-//   display: none;
-// }
 
 body {
   margin: 0; 
@@ -60,7 +54,6 @@ body {
 }
 
 .container {
-  padding-left: 10px;
   padding-right: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -68,9 +61,10 @@ body {
   height: 100%;
 }
 /* Extra  small */
-@media (min-width: 576px){
+@media (max-width: 576px){
   .container {
-      max-width: 540px;
+    padding-left: 10px;
+    max-width: 540px;
   }
 }
 /* small */
@@ -112,16 +106,29 @@ body {
   align-items: center;
   margin: 100px 0;
   cursor:default;
-  h1.active {
-    background-color: var(--active-color);
-  }
-  h1 {
-    padding: 10px;
-    margin: 20px;
-    color: var(--font-color);
+  .header-content {
     border-radius: 10px;
-    font-size: var(--fs-600);
     background-color: var(--bg-color);
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    h1 {
+      color: var(--font-color);
+      margin: 5px;
+      font-size: var(--fs-600);
+    }
   }
 }
 
+.btn {
+  color: var(--font-color);
+  font-size: var(--fs-500);
+  text-decoration: none;
+  background-color: var(--active-color);
+  border-radius: 5px;
+  padding: 8px;
+  display: inline-block;
+  margin-top: 25px;
+}

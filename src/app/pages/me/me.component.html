@@ -1,8 +1,10 @@
-<app-summary></app-summary>
-<span #ref  class="grid-list">
-  <span #span1 (click)="toggole(ref,span1)" class="active"><span>Grid</span></span>
-  <span #span2 (click)="toggole(ref,span2)" ><span>List</span></span>
-</span>
-<app-about-me [gird]="bool"></app-about-me>
-<app-skills [gird]="bool"></app-skills>
+
+<main class="container">
+  <app-summary></app-summary>
+  
+  <app-about-me ></app-about-me>
+  
+  <app-skills ></app-skills>
+</main>
+
 

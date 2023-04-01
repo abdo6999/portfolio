@@ -1,1 +1,11 @@
-<p>project works!</p>
+<div>
+  <header class="header">
+    <h1 #refrans class="active icon" value="All">All</h1>
+    <ng-container> </ng-container>
+  </header>
+  <section class="projects">
+    <ng-container *ngFor="let p of projects">
+      <app-project-card [project]="p"></app-project-card>
+    </ng-container>
+  </section>
+</div>

@@ -6,20 +6,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeComponent implements OnInit {
   constructor() { }
-   bool = true
   ngOnInit(): void {
     
   }
-  toggole(ref:HTMLElement,span:HTMLElement){
-    
-    if(!span.classList.contains('active')){
-      for (let i = 0; i < ref.children.length; i++) {
-        if(ref.children[i].classList.contains('active')){
-          ref.children[i].classList.remove('active')
-        }
-        span.classList.add('active');
-      }
-      this.bool = !this.bool
-    }
-  }
+ 
 }

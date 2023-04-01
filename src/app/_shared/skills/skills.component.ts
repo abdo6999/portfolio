@@ -15,65 +15,67 @@ import info from 'src/assets/info';
   styleUrls: ['./skills.component.scss'],
 })
 export class SkillsComponent implements OnInit {
-  @Input() gird!: boolean;
   collection = info.skills;
   values = info.skills;
-  @ViewChildren('ref') h1: QueryList<ElementRef> | null = null;
+  // get ref h1 for filter function
+  @ViewChildren('refrans') h1: QueryList<ElementRef> | null = null;
+  // get ref card for filter function
   @ViewChildren('card') card: QueryList<ElementRef> | null = null;
   constructor() {}
   ngOnInit(): void {}
-  toggole($event: MouseEvent) {
-    const list: Array<HTMLElement> = this.h1?.map(
-      (res) => res.nativeElement
-    ) as Array<HTMLElement>;
-    const target: HTMLElement = $event?.target as HTMLElement;
+
+  // return native elements from ref up
+  findElemnt = () => {
+    let el: Array<HTMLElement> = [];
+    let nativeH: Array<HTMLElement> = [];
+    let transform = this.card?.filter((ele) => {
+      let element = ele.nativeElement as HTMLElement;
+      el.push(element);
+      return true;
+    });
+    transform = this.h1?.filter((ele) => {
+      let element = ele.nativeElement as HTMLElement;
+      nativeH.push(element);
+      return true;
+    });
+    return { el, nativeH };
+  };
+
+
+  // filter element by category and toggole active class
+  filterToggole($event: MouseEvent) {
+    const target = $event.target as HTMLElement;
+    const elemens = this.findElemnt();
+    console.log(target)
     if (target.classList.contains('active')) {
-      return false;
+      return null;
     }
-    for (let i = 0; i < list.length; i++) {
-      if (list[i].classList.contains('active')) {
-        list[i].classList.remove('active');
+    elemens.el.map((el) => {
+      if (target.getAttribute('value')! !== el.getAttribute('value')) {
+        el.style.display = 'none';
+      } else {
+        el.style.display = 'block';
       }
-    }
-    if (target.classList.contains('Back-End')) {
-      const list: Array<HTMLElement> = this.card?.map(
-        (res) => res.nativeElement
-      ) as Array<HTMLElement>;
-      list.map((res) => {
-        if (!res.classList.contains('Back-End')) {
-          res.style.display = 'none';
-        } else {
-          res.style.display = 'block';
-        }
-      });
-    }
-    if (target.classList.contains('Front-End')) {
-      const list: Array<HTMLElement> = this.card?.map(
-        (res) => res.nativeElement
-      ) as Array<HTMLElement>;
-      list.map((res) => {
-        if (!res.classList.contains('Front-End')) {
-          res.style.display = 'none';
-        } else {
-          res.style.display = 'block';
-        }
-      });
-    }
-    if (target.classList.contains('All')) {
-      const list: Array<HTMLElement> = this.card?.map(
-        (res) => res.nativeElement
-      ) as Array<HTMLElement>;
-      list.map((res) => {
-        res.style.display = 'block';
-      });
-    }
+      if (target.getAttribute('value')! === 'All') {
+        el.style.display = 'block';
+      }
+    });
+    elemens.nativeH.map((el) => {
+      if (el.classList.contains('active')) {
+        el.classList.remove('active');
+      }
+    });
     target.classList.add('active');
-    return true;
+    return null;
   }
+
+  
+  // order keyvalue 
   originalOrder = (
     a: KeyValue<string, string[]>,
     b: KeyValue<string, string[]>
   ): number => {
     return 0;
   };
+
 }

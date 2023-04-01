@@ -9,6 +9,7 @@ import info from 'src/assets/info';
 export class AboutMeComponent implements OnInit {
   keys = Object.keys(info.about_me)
   values = Object.values(info.about_me)
+  cvLink = info.links.cv
   @Input() gird!:boolean
   constructor() { }
 

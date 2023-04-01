@@ -9,7 +9,7 @@
   width: var(--side-width);;
 }
 .countent-container {
-  width: fill-available;
+  width: stretch;
   padding-left: calc(var(--side-width) + 25px);
 }
 

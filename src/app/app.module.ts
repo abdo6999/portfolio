@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarComponent } from './_shared/sidebar/sidebar.component';
 import { MeComponent } from './pages/me/me.component';
 import { ContactMeComponent } from './pages/contact-me/contact-me.component';
 import { ProjectComponent } from './pages/project/project.component';
@@ -12,6 +12,7 @@ import { SvgIconComponent } from './_shared/svg-icon/svg-icon.component';
 import { SkillsComponent } from './_shared/skills/skills.component';
 import { AboutMeComponent } from './_shared/about-me/about-me.component';
 import { SummaryComponent } from './_shared/summary/summary.component';
+import { ProjectCardComponent } from './_shared/project-card/project-card.component';
 
 @NgModule({
   declarations: [
@@ -23,15 +24,11 @@ import { SummaryComponent } from './_shared/summary/summary.component';
     SvgIconComponent,
     SkillsComponent,
     AboutMeComponent,
-    SummaryComponent
+    SummaryComponent,
+    ProjectCardComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

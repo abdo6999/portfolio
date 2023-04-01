@@ -1,23 +1,54 @@
 <section class="skills-contaier">
   <div class="contant">
     <div class="header">
-      <h1>Skills</h1>
+      <div class="header-content">
+        <i style="font-size: 36px; margin: 5px" class="material-icons-outlined"
+          >tune</i
+        >
+        <h1>Skills</h1>
+      </div>
     </div>
-    <div  class="header" >
-      <h1 #ref class="active icon All" (click)="toggole($event)">All</h1>
-      <ng-container *ngFor="let c of collection | keyvalue">
-        <h1 #ref (click)="toggole($event)" class="icon" [ngClass]="c.key"> {{c.key}}</h1>
+    <!-- filter to the skill like all , front end , back end -->
+    <div class="header">
+      <h1
+        #refrans
+        class="active icon"
+        value="All"
+        (click)="filterToggole($event)"
+      >
+        All
+      </h1>
+      <ng-container *ngFor="let c of collection | keyvalue : originalOrder">
+        <h1
+          #refrans
+          (click)="filterToggole($event)"
+          [attr.value]="c.key"
+          class="icon"
+          [ngClass]="c.key"
+        >
+          {{ c.key }}
+        </h1>
       </ng-container>
     </div>
     <div class="cards">
-        <ng-container *ngFor="let c of collection | keyvalue: originalOrder">
-        <div #card class="card-container" [ngClass]="c.key" *ngFor="let s of c.value ">
+      <ng-container *ngFor="let c of collection | keyvalue : originalOrder">
+        <div
+          #card
+          class="card-container"
+          All
+          [attr.value]="c.key"
+          *ngFor="let s of c.value"
+        >
           <div class="card">
-            <div class="front" >
-              <app-svg-icon name="{{s}}"></app-svg-icon>
+            <!-- front side of the card -->
+            <div class="front">
+              <!-- s represent skills like HTML   -->
+              <!-- app svg get svg by name -->
+              <app-svg-icon name="{{ s }}"></app-svg-icon>
             </div>
+            <!-- back side of the card -->
             <div class="back">
-              <span >{{ s }}</span>
+              <span>{{ s }}</span>
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@
       </div>
     </a>
     <a
-      title="contact-me "
+      title="contact-me"
       routerLink="contact-me"
       routerLinkActive="selected"
       class="tabs icon contact-tab"
@@ -33,22 +33,22 @@
     </a>
   </div>
   <div class="bottom">
-    <a href="" title="linkedin" class="tabs icon contact-tab">
+    <a href="{{liknks.linkendin}}" target=”_blank” title="linkedin" class="tabs icon contact-tab">
       <div class="tab-title">
         <app-svg-icon name="linkedin"></app-svg-icon>
       </div>
     </a>
-    <a href="" title="github" class="tabs icon contact-tab">
+    <a href="{{liknks.github}}" target=”_blank” title="github" class="tabs icon contact-tab">
       <div class="tab-title">
         <app-svg-icon name="github"></app-svg-icon>
       </div>
     </a>
-    <a href="" title="gmail" class="tabs icon contact-tab">
+    <a href="{{'mailto:'+liknks.gmail}}" target=”_blank”  target=”_blank” title="gmail" class="tabs icon contact-tab">
       <div class="tab-title">
         <i class="material-icons-sharp">alternate_email</i>
       </div>
     </a>
-    <a href="" title="cv" class="tabs icon contact-tab">
+    <a href="{{liknks.cv}}" target=”_blank” class="tabs icon contact-tab">
       <div class="tab-title">
         <i class="material-icons-sharp">file_open </i>
       </div>

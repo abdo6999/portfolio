@@ -8,7 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./svg-icon.component.scss'],
 })
 export class SvgIconComponent implements OnChanges {
-
+// get svg with name by format <svg>
   @Input() public name?: string;
 
   public svgIcon: any;

@@ -3,45 +3,9 @@
 .summary {
   display: flex;
   flex-direction: row;
-  padding: 0 10px;
-  margin: 30px 0;
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 50px;
-  .lamp {
-    width: 350px;
-    padding-top: 50px;
-  }
-}
-.shadow {
-  position: relative;
-
-}
-.frame {
-  display: inline-block;
-  width: 500px;
-  height: 500px;
-  border-radius: 10px;
-}
-.shadow::after {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 8px;
-  z-index: -1;
-  box-shadow: -8px -7px 19px 9px #998370;
-  border-radius: 10px;
 }
 
 .objective {
-  padding: 10px 30px;
   h1 {
     font-size: var(--fs-600);
     font-weight: bold;
@@ -66,15 +30,15 @@
 
 .btn {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 40px;
+  width: 120px;
   > a {
     color: var(--font-color);
     font-size: var(--fs-500);
     text-decoration: none;
     background-color: var(--active-color);
     border-radius: 5px;
-    padding: 10px;
   }
   p {
     margin: 0;
@@ -88,15 +52,16 @@
     height: 300px;
     border-radius: 10px;
   }
-  .objective {
-    padding: 10px;
-  }
+
   .summary {
     flex-direction: column;
     text-align: center;
     .btn {
       display: flex;
+      align-items: center;
       justify-content: center;
+      width: 120px;
+      margin: 20px auto;
        > a {
         margin-right: 0;
       }

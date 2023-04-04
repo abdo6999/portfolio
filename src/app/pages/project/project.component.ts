@@ -8,7 +8,13 @@ import info from 'src/assets/info';
 })
 export class ProjectComponent implements OnInit {
   @Input() projects = info.projects;
+  selected:boolean = false;
   constructor() {}
-
-  ngOnInit(): void {}
+  selectedProject: any;
+  ngOnInit(): void {
+  }
+  isSelected(event: MouseEvent, project: any) {
+    event.stopPropagation();
+    this.selectedProject = project;
+  }
 }

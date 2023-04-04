@@ -1,19 +1,14 @@
-.skills-contaier {
-  width: 100%;
-  height: fit-content;
-  position: relative;
-  display: flex;
-  margin-bottom: 200px;
-}
+
 .contant {
   width: 100%;
   height: 100%;
 }
 
-.cards {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+// section:not(.selected){
+//   display: none;
+// }
+.card-container:not(.selected) {
+  display: none;
 }
 
 .card-container {
@@ -92,81 +87,11 @@
     }
   }
 }
-.header:not(:first-child) {
-  cursor: pointer;
-  h1.active {
-    background-color: var(--active-color);
-  }
-  h1 {
-    border-radius: 10px;
-    background-color: var(--bg-color);
-    margin: 20px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color: var(--font-color);
-    font-size: var(--fs-600);
-  }
-}
-.header:first-child {
-  flex-direction: column;
-  cursor: default;
-  .header-content {
-    padding: 3px 10px;
-  }
-}
 
-// .grid-list {
-//   display: flex;
-//   justify-content: flex-end;
-//   margin-right: 50px;
-//   cursor: pointer;
-//   span:first-child {
-//     border-top-left-radius: 10px;
-//     border-bottom-left-radius: 10px;
-//   }
-//   span:last-child {
-//     border-top-right-radius: 10px;
-//     border-bottom-right-radius: 10px;
-//   }
-//   span {
-//     background-color: var(--bg-color);
-//     padding: 18px;
-//     font-size: var(--fs-500);
-//     span {
-//       z-index: 5;
-//       position: relative;
-//       background: transparent;
-//     }
-//   }
-//   span.active {
-//     position: relative;
-//     &::after {
-//       content: "";
-//       position: absolute;
-//       width: 100%;
-//       height: 100%;
-//       top: 0;
-//       left: 0;
-//       background: var(--active-color);
-//       border-radius: 10px;
-//     }
-//   }
-// }
+
 
 @media (max-width: 768px) {
-  .grid-list {
-    margin-right: 20px;
-  }
-  .header h1[value] {
-    margin: 5px;
-    font-size: 25px;
-  }
-  .cards {
-    gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
-  }
+
   .card {
     height: 160px;
   }

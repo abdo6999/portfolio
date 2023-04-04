@@ -86,7 +86,7 @@ const info = {
       type: 'front-end',
     },
     {
-      title: 'boud',
+      title: 'boudi',
       description:
         'Bondi is a website that uses HTML, CSS, and Bootstrap to create landing pages.the landing page includes Home, Services, Portfolio, About, and Contact sections.',
       github: 'https://github.com/abdo6999/Bondi',

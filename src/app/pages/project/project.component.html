@@ -1,11 +1,7 @@
-<div>
-  <header class="header">
-    <h1 #refrans class="active icon" value="All">All</h1>
-    <ng-container> </ng-container>
-  </header>
-  <section class="projects">
+<main class="container">
+  <section class="projects" >
     <ng-container *ngFor="let p of projects">
-      <app-project-card [project]="p"></app-project-card>
+      <app-project-card [selectedProject]="selectedProject" (click)="isSelected($event, p)" [project]="p"></app-project-card>
     </ng-container>
   </section>
-</div>
+</main>

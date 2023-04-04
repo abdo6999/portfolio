@@ -1,10 +1,37 @@
-
 <main class="container">
   <app-summary></app-summary>
+  <div class="about-me">
+    <div class="header">
+      <div class="header-content">
+        <i style="font-size: 36px; margin: 5px" class="material-icons-outlined"
+          >info</i
+        >
+        <h1>About Me</h1>
+      </div>
+    </div>
+    <app-about-me></app-about-me>
+  </div>
+  <div class="skills">
+    <div class="header">
+      <div class="header-content">
+        <i style="font-size: 36px; margin: 5px" class="material-icons-outlined"
+          >tune</i
+        >
+        <h1>Skills</h1>
+      </div>
+    </div>
+    <div class="header">
+      <h1 class="btn" [ngClass]="{ 'active': isActive('All') }" (click)="active = 'All'">All</h1>
+      <h1 class="btn" [ngClass]="{ 'active': isActive('Front-End') }" (click)="active = 'Front-End'">Front-End</h1>
+      <h1 class="btn" [ngClass]="{ 'active': isActive('Back-End') }" (click)="active = 'Back-End'">Back-End</h1>
+    </div>
+    <div class="cards">
+      <ng-container *ngFor="let keyVal of skills | keyvalue:originalOrder">
+        <ng-container *ngFor="let skill of keyVal.value ">
+          <app-skills [skill]="skill" [key]="keyVal.key" [selectedKey]="active"></app-skills>
+        </ng-container>
+      </ng-container>
+    </div>
   
-  <app-about-me ></app-about-me>
-  
-  <app-skills ></app-skills>
+  </div>
 </main>
-
-

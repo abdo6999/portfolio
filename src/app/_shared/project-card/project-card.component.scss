@@ -2,25 +2,112 @@ article {
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
   flex-direction: column;
   border:1px solid var(--border-color);
   border-radius: 5px;
+  height: 100%;
 }
 .image-container {
   padding: 10px;
+  width: 100%;
   img {
     border-radius: 5px;
     height: 200px;
     width: 250px;
-    max-width: 100%;
+    min-width: 98%;
+    max-width: 98%;
     max-height: 100%;
   }
 }
-header {
+h2 {
   color: white;
   font-size: var(--fs-500);
   display: inline-block;
   padding: 12px;
+  text-transform: capitalize;
+}
+.project-details {
+  color: black;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px;
+  height: 80%;
+  max-height: 800px;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  z-index: 9999;
+  overflow: auto;
+  border-radius: 15px;
+  .image-container{
+    img {
+      box-shadow: 0px 4px 6px rgb(0 0 0 / 50%);
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 100%;
+      height: 500px;
+    }
+  }
+  p {
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-size: var(--fs-500);
+    color: black;
+    margin-bottom: 12px;
+    padding: 0 10px;
+  }
+  h2 {
+    color: black;
+    padding: 0;
+  }
+}
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  a {
+    cursor: pointer;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 9998;
+  cursor: default;
+  ::ng-deep {
+    svg * {
+      fill: black !important;
+    }
+  }
+  .tab-title i {
+    color: black;
+    font-size: var(--fs-600);
+    &:hover{
+      color: black !important;
+    }
+  }
+}
+.close-btn {
+  position: absolute;
+  right: 0;
+  top: -2px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
 }

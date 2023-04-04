@@ -1,58 +1,10 @@
-<section class="skills-contaier">
-  <div class="contant">
-    <div class="header">
-      <div class="header-content">
-        <i style="font-size: 36px; margin: 5px" class="material-icons-outlined"
-          >tune</i
-        >
-        <h1>Skills</h1>
-      </div>
-    </div>
-    <!-- filter to the skill like all , front end , back end -->
-    <div class="header">
-      <h1
-        #refrans
-        class="active icon"
-        value="All"
-        (click)="filterToggole($event)"
-      >
-        All
-      </h1>
-      <ng-container *ngFor="let c of collection | keyvalue : originalOrder">
-        <h1
-          #refrans
-          (click)="filterToggole($event)"
-          [attr.value]="c.key"
-          class="icon"
-          [ngClass]="c.key"
-        >
-          {{ c.key }}
-        </h1>
-      </ng-container>
-    </div>
-    <div class="cards">
-      <ng-container *ngFor="let c of collection | keyvalue : originalOrder">
-        <div
-          #card
-          class="card-container"
-          All
-          [attr.value]="c.key"
-          *ngFor="let s of c.value"
-        >
-          <div class="card">
-            <!-- front side of the card -->
-            <div class="front">
-              <!-- s represent skills like HTML   -->
-              <!-- app svg get svg by name -->
-              <app-svg-icon name="{{ s }}"></app-svg-icon>
-            </div>
-            <!-- back side of the card -->
-            <div class="back">
-              <span>{{ s }}</span>
-            </div>
+<section [ngClass]="{'selected': selectedKey === key || selectedKey === 'All'}" class="card-container">
+        <div class="card">
+          <div class="front">
+            <app-svg-icon [name]="skill"></app-svg-icon>
+          </div>
+          <div class="back">
+            <span>{{skill}}</span>
           </div>
         </div>
-      </ng-container>
-    </div>
-  </div>
 </section>

@@ -1,13 +1,4 @@
-import { KeyValue } from '@angular/common';
-import {
-  Component,
-  ElementRef,
-  Input,
-  OnInit,
-  QueryList,
-  ViewChildren,
-} from '@angular/core';
-import info from 'src/assets/info';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
@@ -15,67 +6,38 @@ import info from 'src/assets/info';
   styleUrls: ['./skills.component.scss'],
 })
 export class SkillsComponent implements OnInit {
-  collection = info.skills;
-  values = info.skills;
-  // get ref h1 for filter function
-  @ViewChildren('refrans') h1: QueryList<ElementRef> | null = null;
-  // get ref card for filter function
-  @ViewChildren('card') card: QueryList<ElementRef> | null = null;
-  constructor() {}
+  @Input() skill!:string;
+  @Input() key!:string;
+  @Input() selectedKey!:string;
   ngOnInit(): void {}
 
-  // return native elements from ref up
-  findElemnt = () => {
-    let el: Array<HTMLElement> = [];
-    let nativeH: Array<HTMLElement> = [];
-    let transform = this.card?.filter((ele) => {
-      let element = ele.nativeElement as HTMLElement;
-      el.push(element);
-      return true;
-    });
-    transform = this.h1?.filter((ele) => {
-      let element = ele.nativeElement as HTMLElement;
-      nativeH.push(element);
-      return true;
-    });
-    return { el, nativeH };
-  };
-
-
-  // filter element by category and toggole active class
-  filterToggole($event: MouseEvent) {
-    const target = $event.target as HTMLElement;
-    const elemens = this.findElemnt();
-    console.log(target)
-    if (target.classList.contains('active')) {
-      return null;
-    }
-    elemens.el.map((el) => {
-      if (target.getAttribute('value')! !== el.getAttribute('value')) {
-        el.style.display = 'none';
-      } else {
-        el.style.display = 'block';
-      }
-      if (target.getAttribute('value')! === 'All') {
-        el.style.display = 'block';
-      }
-    });
-    elemens.nativeH.map((el) => {
-      if (el.classList.contains('active')) {
-        el.classList.remove('active');
-      }
-    });
-    target.classList.add('active');
-    return null;
-  }
-
-  
-  // order keyvalue 
-  originalOrder = (
-    a: KeyValue<string, string[]>,
-    b: KeyValue<string, string[]>
-  ): number => {
-    return 0;
-  };
 
 }
+
+
+/*  <div class="contant">
+
+    <!-- filter to the skill like all , front end , back end -->
+    <!-- <div class="header">
+      <h1
+        #refrans
+        class="active icon"
+        value="All"
+        (click)="filterToggole($event)"
+      >
+        All
+      </h1>
+      <ng-container *ngFor="let c of collection | keyvalue : originalOrder">
+        <h1
+          #refrans
+          (click)="filterToggole($event)"
+          [attr.value]="c.key"
+          class="icon"
+          [ngClass]="c.key"
+        >
+          {{ c.key }}
+        </h1>
+      </ng-container>
+    </div> -->
+    
+  </div>*/

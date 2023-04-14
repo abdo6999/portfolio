@@ -1,17 +1,17 @@
 import { Component, Input, OnChanges, SecurityContext } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-svg-icon',
-  template: `<span class='icon' [innerHTML]="svgIcon"></span>`,
+  template: `<span [ngClass]="getClass()"  [innerHTML]="svgIcon"></span>`,
   styleUrls: ['./svg-icon.component.scss'],
 })
 export class SvgIconComponent implements OnChanges {
-// get svg with name by format <svg>
+// The file name of the SVG icon to display
   @Input() public name?: string;
-
-  public svgIcon: any;
+// The sanitized HTML string for the SVG icon
+  public svgIcon:  SafeHtml | undefined;
 
   constructor(
     private httpClient: HttpClient,
@@ -20,15 +20,24 @@ export class SvgIconComponent implements OnChanges {
   }
 
   public ngOnChanges(): void {
+// If no icon name is provided, clear the displayed icon
     if (!this.name) {
-      this.svgIcon = '';
+      this.svgIcon = undefined;
       return;
     }
+    // Otherwise, fetch the SVG file and sanitize the HTML for display
     this.httpClient
       .get(`./assets/icon/${this.name}.svg`, { responseType: 'text' })
       .subscribe(value => {
         this.svgIcon = this.sanitizer.bypassSecurityTrustHtml(value);
       });
   }
-
+  // Returns the class name for the icon element, which is based on the icon name
+  getClass(): string {
+    if (this.name) {
+      return `icon-${this.name}`;
+    } else {
+      return '';
+    }
+  }
 }

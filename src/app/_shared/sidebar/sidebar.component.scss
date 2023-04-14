@@ -5,7 +5,7 @@
   flex-direction: column;
   padding-left: 8px;
 }
-.top { 
+.top {
   top: 15px;
   z-index: 15;
 }
@@ -35,7 +35,7 @@
 }
 ::ng-deep{
 
-  app-svg-icon:not([ng-reflect-name="PostgreSQL"]):not([ng-reflect-name="Jasmine"]) span svg {
+  app-svg-icon span:not(.icon-PostgreSQL):not(.icon-Jasmine) svg {
     width: 35px;
     display: block;
     height: fit-content;
@@ -45,7 +45,33 @@
   }
 }
 
-@media (max-width: 768px) { 
+.iframe-container {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 32;
+}
+
+.iframe {
+width: 100%;
+height: 100%;
+}
+
+.close-icon {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  padding: 10px;
+  color: #fff;
+  background-color: #000;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
   .top {
     top: auto;
     bottom: 15px;
@@ -59,7 +85,7 @@
   .tabs {
     margin: 0;
     margin: 0 10px;
-  } 
+  }
   .bottom {
     display: none;
   }

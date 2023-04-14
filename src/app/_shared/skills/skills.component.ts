@@ -1,4 +1,6 @@
+import { KeyValue } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import info from 'src/assets/info';
 
 @Component({
   selector: 'app-skills',
@@ -6,38 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./skills.component.scss'],
 })
 export class SkillsComponent implements OnInit {
-  @Input() skill!:string;
-  @Input() key!:string;
-  @Input() selectedKey!:string;
+  skills = info.skills;
+  active: string = 'All';
   ngOnInit(): void {}
-
-
+  originalOrder = (a: KeyValue<string, string[]>, b: KeyValue<string, string[]>): number => {
+    return 0;
+  }
+  isActive(btn: string) {
+    return this.active === btn;
+  }
 }
 
-
-/*  <div class="contant">
-
-    <!-- filter to the skill like all , front end , back end -->
-    <!-- <div class="header">
-      <h1
-        #refrans
-        class="active icon"
-        value="All"
-        (click)="filterToggole($event)"
-      >
-        All
-      </h1>
-      <ng-container *ngFor="let c of collection | keyvalue : originalOrder">
-        <h1
-          #refrans
-          (click)="filterToggole($event)"
-          [attr.value]="c.key"
-          class="icon"
-          [ngClass]="c.key"
-        >
-          {{ c.key }}
-        </h1>
-      </ng-container>
-    </div> -->
-    
-  </div>*/

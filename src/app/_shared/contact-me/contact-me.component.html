@@ -1,0 +1,40 @@
+<!-- Contact Form -->
+<section class="contact-form-container">
+  <div class="contact-form">
+    <form (ngSubmit)="sendEmail()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required [(ngModel)]="name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required [(ngModel)]="email">
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required [(ngModel)]="message"></textarea>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <div class="contact-icons">
+    <!-- LinkedIn icon -->
+    <a href="{{links.linkendin}}" target="_blank" rel="noopener" title="LinkedIn" class="tabs icon contact-tab">
+      <div class="tab-title">
+        <app-svg-icon name="linkedin"></app-svg-icon>
+      </div>
+    </a>
+    <!-- Github icon -->
+    <a href="{{links.github}}" target="_blank" rel="noopener" title="GitHub" class="tabs icon contact-tab">
+      <div class="tab-title">
+        <app-svg-icon name="github"></app-svg-icon>
+      </div>
+    </a>
+    <!-- Gmail icon -->
+    <a href="{{'mailto:'+links.gmail}}" target="_blank" rel="noopener" title="Gmail" class="tabs icon contact-tab">
+      <div class="tab-title">
+        <i class="material-icons-sharp">alternate_email</i>
+      </div>
+    </a>
+  </div>
+</section>

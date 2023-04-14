@@ -1,20 +1,25 @@
+/* Container for the whole page */
 .wrapper {
   position: relative;
   display: flex;
-  height: 100% ;
+  height: 100%;
   border-radius: 15px;
 }
+
+/* Container for the sidebar */
 .nav-container {
   position: absolute;
-  width: var(--side-width);;
-}
-.countent-container {
-  width: stretch;
-  padding-left: calc(var(--side-width) + 25px);
+  width: var(--side-width);
 }
 
-@media (max-width: 768px) { 
-  .countent-container {
+/* Container for the main content */
+.content-container {
+  width: stretch;
+  padding-left: calc(var(--side-width) + 25px);
+  margin-bottom: 100px;
+
+  /* Media query for small screens */
+  @media (max-width: 768px) {
     padding-left: 0;
   }
 }

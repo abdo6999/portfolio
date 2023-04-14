@@ -1,0 +1,89 @@
+.contant {
+  width: 100%;
+  height: 100%;
+}
+
+.card-container {
+  margin: 0;
+  &:hover .card {
+    transform: rotateY(180deg);
+    span {
+      display: block;
+    }
+    h3 {
+      display: none;
+    }
+  }
+}
+
+.card {
+  cursor: pointer;
+  position: relative;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  height: 250px;
+  transition: transform 0.3s;
+  transform-style: preserve-3d;
+  .front,
+  .back {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--font-color);
+    backface-visibility: hidden;
+  }
+  .front {
+    ::ng-deep {
+      h3 {
+        transition: all 0.4s;
+        color: var(--font-color);
+        font-size: var(--fs-600);
+      }
+      i {
+        transition: all 0.4s;
+        color: var(--font-color);
+        font-size: var(--fs-xl);
+      }
+      span:not(.icon-PostgreSQL):not(.icon-Jasmine) svg {
+        width: 100px;
+        display: block;
+        height: fit-content;
+        * {
+          fill: var(--font-color);
+        }
+      }
+
+    }
+    img {
+      display: block;
+    }
+  }
+  .back {
+    transform: rotateY(180deg);
+    text-align: center;
+    line-height: 1.8;
+    span {
+      color: var(--font-color);
+      font-size: 25px;
+      margin: 9px;
+      width: 100%;
+      overflow-y: hidden;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: 160px;
+  }
+  ::ng-deep {
+    svg {
+      width: 50px !important;
+    }
+  }
+}

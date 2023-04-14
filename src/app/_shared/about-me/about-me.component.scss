@@ -1,5 +1,5 @@
-
-.contant {
+/* Container for the about section */
+.about-container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -7,12 +7,14 @@
   height: 100%;
 }
 
+/* Container for the image in the about section */
 .image-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Frame around the image in the about section */
 .frame {
   display: inline-block;
   width: 100%;
@@ -20,17 +22,22 @@
   border-radius: 10px;
   max-width: 500px;
 }
-.about-details {
+
+/* Container for the details in the about section */
+.details-container {
   padding-left: 25px;
-  font-size: calc(var(--fs-400) + 2px) ;
+  font-size: calc(var(--fs-400) + 2px);
   font-weight: 500;
 }
+
+/* Container for each row of details in the about section */
 .row {
   padding: 10px 0;
 }
 
-.ct-about{
-  span{
+/* Each detail in the about section */
+.detail {
+  span {
     font-size: var(--fs-500);
     font-weight: 600;
     text-transform: capitalize;
@@ -39,7 +46,7 @@
   }
 }
 
-
+/* Button in the about section */
 .btn {
   color: var(--font-color);
   font-size: var(--fs-500);
@@ -55,56 +62,44 @@
 }
 
 
-// .shadow {
-//   position: relative;
-// }
-
-
-// .shadow::after {
-//   content: "";
-//   position: absolute;
-//   top: 0px;
-//   left: 0px;
-//   right: 0px;
-//   bottom: 8px;
-//   z-index: -1;
-//   box-shadow: -8px -7px 19px 9px #998370;
-//   border-radius: 10px;
-
-// }
-
-
 .header {
   flex-direction: column;
 }
 
-
+/* Media query for small screens */
 @media (max-width: 768px) {
+  /* Frame around the image in the about section */
   .frame {
     border-radius: 10px;
   }
 
+  /* Container for the details in the about section */
   .about-details {
     font-size: var(--fs-500);
     padding: 10px;
   }
-  .contant {
+
+  /* Container for the about section */
+  .about-container {
     flex-direction: column;
     text-align: center;
+    /* Button in the about section */
     .btn {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 120px;
       margin: 20px auto;
-       > a {
+      > a {
         margin-right: 0;
       }
     }
+    /* First row of details in the about section */
     .row:first-child {
       padding: 20px 0 10px;
     }
-    .icon{
+    /* Container for the icon in the about section */
+    .icon {
       justify-content: center;
     }
   }

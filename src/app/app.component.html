@@ -1,8 +1,11 @@
 <div class="wrapper">
+  <!-- Navigation Container -->
   <div class="nav-container">
     <app-sidebar></app-sidebar>
   </div>
-  <div class="countent-container">
-    <router-outlet></router-outlet>
-  </div>
+
+  <!-- Main Content Container -->
+  <main class="content-container">
+    <app-me [pageTitle]="pageTitle" [pageDescription]="pageDescription"></app-me>
+  </main>
 </div>

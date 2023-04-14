@@ -28,21 +28,24 @@ h2 {
   padding: 12px;
   text-transform: capitalize;
 }
+
 .project-details {
+  overflow: hidden;
   color: black;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  max-width: 800px;
+  max-height: 850px;
   height: 80%;
-  max-height: 800px;
   background-color: #f5f5f5;
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
   z-index: 9999;
-  overflow: auto;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   .image-container{
     img {
       box-shadow: 0px 4px 6px rgb(0 0 0 / 50%);
@@ -110,4 +113,11 @@ h2 {
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .project-details {
+    width: 90%;
+    max-height: 850px;
+    height: 75%;
+  }
 }

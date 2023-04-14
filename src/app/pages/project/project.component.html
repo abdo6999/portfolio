@@ -1,7 +1,0 @@
-<main class="container">
-  <section class="projects" >
-    <ng-container *ngFor="let p of projects">
-      <app-project-card [selectedProject]="selectedProject" (click)="isSelected($event, p)" [project]="p"></app-project-card>
-    </ng-container>
-  </section>
-</main>

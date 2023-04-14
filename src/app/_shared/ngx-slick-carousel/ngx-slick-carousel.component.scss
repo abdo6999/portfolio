@@ -1,0 +1,75 @@
+.carousel {
+  padding-top: 10px;
+  overflow: hidden;
+}
+ngx-slick-carousel {
+  width: 100%;
+  display: block;
+  height:100%
+}
+::ng-deep {
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 100;
+    &::before {
+      font-size: 28px;
+      color: var(--active-color);
+    }
+  }
+  .slick-prev {
+    left: 0px;
+  }
+  .slick-next {
+    right: 0px;
+  }
+}
+
+
+.slide {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.slide img {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  width: 600px;
+  height: 450px;
+  max-width: 100%;
+}
+::ng-deep {
+  .slick-dots {
+    margin: 0 0 22px 0;
+    bottom: -4%;
+  }
+  .slick-dots li:not(.slick-active) button:hover:before ,.slick-dots li:not(.slick-active) button:focus:before {
+    color: var(--active-color);
+    opacity: 0.5;
+  }
+  .slick-dots li.slick-active button:before {
+    color: var(--active-color);
+  }
+
+  .slick-dots li button:before {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide img {
+    height: 300px;
+  }
+}

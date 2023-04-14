@@ -3,7 +3,7 @@ const info = {
   links: {
     github: 'https://github.com/abdo6999',
     linkendin: 'https://www.linkedin.com/in/abdelrahman-mahmoud-akl',
-    cv: '',
+    cv: 'https://drive.google.com/file/d/1HH-T-0O6XGT4qmAo3qaycoc5cxji70GF/preview',
     gmail: 'abdelrahman.mahmoud.elsaeed@gmail.com',
   },
   coverLatter: [

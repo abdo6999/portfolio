@@ -1,24 +1,29 @@
-
-
+/* Styles for the summary section */
 .summary {
   display: flex;
   flex-direction: row;
 }
 
+/* Styles for the objective section */
 .objective {
+  /* Styles for the heading */
   h1 {
     font-size: var(--fs-600);
     font-weight: bold;
     line-height: 1.5;
   }
+
+  /* Styles for the title */
   span {
     color: white;
     font-size: var(--fs-500);
     display: inline-block;
-    padding: 8px 12px; 
+    padding: 8px 12px;
     background-color: var(--active-color);
     margin: 15px 0 20px 0;
   }
+
+  /* Styles for the paragraphs */
   p:not(:first-child) {
     line-height: 1.5;
     letter-spacing: 1px;
@@ -28,11 +33,14 @@
   }
 }
 
+/* Styles for the button */
 .btn {
   display: flex;
   justify-content: center;
   margin-top: 40px;
   width: 120px;
+
+  /* Styles for the button link */
   > a {
     color: var(--font-color);
     font-size: var(--fs-500);
@@ -40,35 +48,44 @@
     background-color: var(--active-color);
     border-radius: 5px;
   }
+
+  /* Styles for the paragraph */
   p {
     margin: 0;
   }
 }
 
-
+/* Media query for small screens */
 @media (max-width: 768px) {
+  /* Styles for the frame */
   .frame {
     width: 300px;
     height: 300px;
     border-radius: 10px;
   }
 
+  /* Styles for the summary section */
   .summary {
     flex-direction: column;
     text-align: center;
+
+    /* Styles for the button */
     .btn {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 120px;
       margin: 20px auto;
-       > a {
+
+      /* Styles for the button link */
+      > a {
         margin-right: 0;
       }
     }
+
+    /* Styles for the icon */
     .icon{
       justify-content: center;
     }
   }
 }
-

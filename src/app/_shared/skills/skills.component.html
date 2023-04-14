@@ -1,10 +1,15 @@
-<section [ngClass]="{'selected': selectedKey === key || selectedKey === 'All'}" class="card-container">
-        <div class="card">
-          <div class="front">
-            <app-svg-icon [name]="skill"></app-svg-icon>
-          </div>
-          <div class="back">
-            <span>{{skill}}</span>
-          </div>
-        </div>
-</section>
+<!-- Skills Filter Header -->
+<header class="skills-header">
+  <h1 class="btn" [ngClass]="{ active: isActive('All') }" (click)="active = 'All'">All</h1>
+  <h1 class="btn" [ngClass]="{ active: isActive('Front-End') }" (click)="active = 'Front-End'">Front-End</h1>
+  <h1 class="btn" [ngClass]="{ active: isActive('Back-End') }" (click)="active = 'Back-End'">Back-End</h1>
+</header>
+
+<!-- Skills Cards -->
+<div class="skills-cards">
+  <ng-container *ngFor="let keyVal of skills | keyvalue : originalOrder">
+    <ng-container *ngFor="let skill of keyVal.value">
+      <app-skills-card class="skill-card" [ngClass]="{'selected': active === keyVal.key || active === 'All'}" [skill]="skill"></app-skills-card>
+    </ng-container>
+  </ng-container>
+</div>

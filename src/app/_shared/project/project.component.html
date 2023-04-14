@@ -1,0 +1,9 @@
+<div class="projects-grid">
+  <ng-container *ngFor="let p of projects">
+    <app-project-card
+      [selectedProject]="selectedProject"
+      (click)="isSelected($event, p)"
+      [project]="p"
+    ></app-project-card>
+  </ng-container>
+</div>

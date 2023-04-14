@@ -1,57 +1,68 @@
 <nav class="nav-tabs">
+  <!-- Top section with navigation tabs -->
   <div class="top">
-    <a
-      title="home"
-      routerLink=""
-      routerLinkActive="selected"
-      [routerLinkActiveOptions]="{ exact: true }"
-      class="tabs icon home-tab"
-    >
+    <!-- Home tab -->
+    <a  #sidebarButton   href="#summary" class="tabs icon home-tab selected" title="home">
       <div class="tab-title">
         <i class="material-icons-sharp">home</i>
       </div>
     </a>
-    <a
-      title="portfolio"
-      routerLink="portfolio"
-      routerLinkActive="selected"
-      class="tabs icon portfolio-tab"
-    >
+    <!-- About me tab -->
+    <a  #sidebarButton  href="#about-me" class="tabs icon portfolio-tab" title="about-me">
       <div class="tab-title">
-        <i class="material-icons-sharp">person</i>
+        <i class="material-icons-sharp">info</i>
       </div>
     </a>
-    <a
-      title="contact-me"
-      routerLink="contact-me"
-      routerLinkActive="selected"
-      class="tabs icon contact-tab"
-    >
+    <!-- Skills tab -->
+    <a  #sidebarButton  href="#skills" class="tabs icon contact-tab" title="skills">
       <div class="tab-title">
-        <i class="material-icons-sharp">mail</i>
+        <i class="material-icons-sharp">tune</i>
+      </div>
+    </a>
+    <!-- Projects tab -->
+    <a  #sidebarButton  href="#projects" class="tabs icon contact-tab" title="project">
+      <div class="tab-title">
+        <i class="material-icons-sharp">construction</i>
+      </div>
+    </a>
+    <!-- Contact me tab -->
+    <a  #sidebarButton  href="#contact-me" class="tabs icon contact-tab" title="contact-me">
+      <div class="tab-title">
+        <i class="material-icons-sharp">email</i>
       </div>
     </a>
   </div>
+  <!-- Bottom section with social media icons -->
   <div class="bottom">
-    <a href="{{liknks.linkendin}}" target=”_blank” title="linkedin" class="tabs icon contact-tab">
+    <!-- LinkedIn icon -->
+    <a    href="{{ links.linkendin }}" target="_blank" class="tabs icon contact-tab" title="linkedin">
       <div class="tab-title">
         <app-svg-icon name="linkedin"></app-svg-icon>
       </div>
     </a>
-    <a href="{{liknks.github}}" target=”_blank” title="github" class="tabs icon contact-tab">
+    <!-- GitHub icon -->
+    <a    href="{{ links.github }}" target="_blank" class="tabs icon contact-tab" title="github">
       <div class="tab-title">
         <app-svg-icon name="github"></app-svg-icon>
       </div>
     </a>
-    <a href="{{'mailto:'+liknks.gmail}}" target=”_blank”  target=”_blank” title="gmail" class="tabs icon contact-tab">
+    <!-- Gmail icon -->
+    <a    href="{{ 'mailto:' + links.gmail }}" target="_blank" class="tabs icon contact-tab" title="gmail">
       <div class="tab-title">
         <i class="material-icons-sharp">alternate_email</i>
       </div>
     </a>
-    <a href="{{liknks.cv}}" target=”_blank” class="tabs icon contact-tab">
+    <!-- File open icon -->
+    <div class="tabs icon contact-tab">
       <div class="tab-title">
-        <i class="material-icons-sharp">file_open </i>
+        <i class="material-icons-sharp open-icon" (click)="openIframe()">file_open</i>
       </div>
-    </a>
+    </div>
   </div>
 </nav>
+
+<!-- Iframe container section for displaying content -->
+<div class="iframe-container" *ngIf="showIframe">
+  <iframe [src]="safeUrl" class="iframe"></iframe>
+  <i class="material-icons-sharp close-icon" (click)="closeIframe()">close</i>
+</div>

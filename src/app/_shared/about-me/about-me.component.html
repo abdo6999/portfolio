@@ -1,21 +1,36 @@
 <section id="about_me">
 
-  <div class="contant">
+  <!-- Section for displaying details about the person -->
+
+  <div class="about-container">
+    <!-- Container for the section -->
+
     <div class="image-container">
-        <img class="frame" src="./assets/frame.png" alt="frame" />
+      <!-- Container for the my image -->
+      <img class="frame" src="./assets/abdelrahman-mahmoud.png" alt="frame" />
     </div>
-    <div class="about-details">
+
+    <div class="details-container">
+      <!-- Container for the my details -->
+
       <ng-container *ngFor="let k of keys; let i = index">
+        <!-- Loop through each key and value pair in the my details -->
+
         <div class="row">
+          <!-- Row for displaying the details -->
           <div class="col-md-12">
-            <div class="ct-about">
-              <!-- k repesent info key like name valuse is the answer -->
-              <span> {{ k }}: </span> {{ values[i] }}
+            <!-- Column for displaying the details -->
+            <div class="detail">
+              <!-- Display the key and value for the detail -->
+              <span class="detail-key">{{ k }}:</span>
+              <span class="detail-value">{{ values[i] }}</span>
             </div>
           </div>
         </div>
       </ng-container>
-      <a href="{{ cvLink }}" class="btn">Download Cv</a>
+      <!-- Button to download the my CV -->
+      <a href="{{ cvLink }}" class="btn">Download CV</a>
     </div>
   </div>
+
 </section>

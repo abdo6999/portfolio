@@ -1,42 +1,45 @@
-<article (click)="closeOverlay()" [ngClass]="{ selected: selectedProject === project }">
-    <div class="image-container">
-      <img src="{{ project.thumbnail }}" alt="" />
-    </div>
-    <h2>
-      {{ project.title }}
-    </h2>
+<article
+  (click)="openOverlay()"
+
+  [ngClass]="{ selected: selectedProject === project }"
+>
+  <h2>{{ project.title }}</h2>
+  <div class="image-container">
+    <img src="{{ project.thumbnail }}" alt="" />
+  </div>
   <div class="overlay" *ngIf="selectedProject === project && close">
     <div class="project-details">
-      <button class="close-btn" (click)="close = true">
+      <button class="close-btn" (click)="closeOverlay(); $event.stopPropagation()">
         <i class="material-icons-outlined">close</i>
       </button>
       <h2>{{ project.title }}</h2>
-      <div class="image-container">
-        <img src="{{ project.thumbnail }}" alt="" />
-      </div>
+      <app-ngx-slick-carousel [slides]="project.images"></app-ngx-slick-carousel>
       <p>{{ project.description }}</p>
       <div class="links">
         <a
           *ngIf="project.github"
           target="_blank"
-          title="linkedin"
+          rel="noopener"
+          title="GitHub Repository"
           class="tabs icon contact-tab"
           href="{{ project.github }}"
         >
           <div class="tab-title">
-            <app-svg-icon name="github"></app-svg-icon></div
-        ></a>
+            <app-svg-icon name="github"></app-svg-icon>
+          </div>
+        </a>
         <a
           *ngIf="project.demo"
           target="_blank"
-          title="linkedin"
+          rel="noopener"
+          title="Live Demo"
           class="tabs icon contact-tab"
           href="{{ project.demo }}"
         >
           <div class="tab-title">
             <i class="material-icons-outlined">link</i>
-          </div></a
-        >
+          </div>
+        </a>
       </div>
     </div>
   </div>

@@ -1,0 +1,5 @@
+<ngx-slick-carousel class="carousel" #carousel (afterChange)="afterChange($event)" [config]="carouselConfig"  >
+  <div ngxSlickItem class="slide" *ngFor="let slide of slides">
+    <img [src]="slide">
+  </div>
+</ngx-slick-carousel>

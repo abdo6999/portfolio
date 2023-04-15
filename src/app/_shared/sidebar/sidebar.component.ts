@@ -91,10 +91,12 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   // Function to show the iframe
   openIframe() {
     this.showIframe = true;
+    document.body.style.overflow = 'hidden'
   }
-
   // Function to close the iframe
   closeIframe() {
     this.showIframe = false;
+    document.body.style.overflow = 'auto'
   }
+
 }

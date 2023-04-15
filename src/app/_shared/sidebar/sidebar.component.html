@@ -55,7 +55,7 @@
     <!-- File open icon -->
     <div class="tabs icon contact-tab">
       <div class="tab-title">
-        <i class="material-icons-sharp open-icon" (click)="openIframe()">file_open</i>
+        <i class="material-icons-sharp open-icon"   (click)="openIframe()">file_open</i>
       </div>
     </div>
   </div>
@@ -63,6 +63,7 @@
 
 <!-- Iframe container section for displaying content -->
 <div class="iframe-container" *ngIf="showIframe">
-  <iframe [src]="safeUrl" class="iframe"></iframe>
-  <i class="material-icons-sharp close-icon" (click)="closeIframe()">close</i>
+  <object class="iframe" data="./assets/Abdelrahman-Mahmoud.html" type="application/pdf"  style="border: none;"></object>
+
+  <i  class="material-icons-sharp close-icon" (click)="closeIframe()">close</i>
 </div>

@@ -1,4 +1,5 @@
-.top,.bottom {
+.top,
+.bottom {
   position: fixed;
   width: var(--side-width);
   display: flex;
@@ -33,8 +34,7 @@
     color: var(--icon-color);
   }
 }
-::ng-deep{
-
+::ng-deep {
   app-svg-icon span:not(.icon-PostgreSQL):not(.icon-Jasmine) svg {
     width: 35px;
     display: block;
@@ -58,18 +58,27 @@
 }
 
 .iframe {
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  zoom: 100%;
+  z-index: 999;
 }
+
 
 .close-icon {
   position: absolute;
-  top: 0px;
-  right: 0;
+  top: -1px;
+  right: -2px;
   padding: 10px;
   color: #fff;
+  border-radius: 5px;
   background-color: #000;
   cursor: pointer;
+  z-index: 9999;
+
 }
 @media (max-width: 768px) {
   .top {
